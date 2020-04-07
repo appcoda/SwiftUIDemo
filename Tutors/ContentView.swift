@@ -31,15 +31,15 @@ struct ContentView_Previews : PreviewProvider {
 struct TutorCell : View {
     let tutor: Tutor
     var body: some View {
-        return NavigationButton(destination: TutorDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
+        return NavigationLink(destination: TutorDetail(name: tutor.name, headline: tutor.headline, bio: tutor.bio)) {
             Image(tutor.imageName)
                 .cornerRadius(40)
-                VStack(alignment: .leading) {
-                    Text(tutor.name)
-                    Text(tutor.headline)
-                        .font(.subheadline)
-                        .color(.gray)
-                }
+            VStack(alignment: .leading) {
+                Text(tutor.name)
+                Text(tutor.headline)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
         }
     }
+}
